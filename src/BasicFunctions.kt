@@ -32,6 +32,9 @@ fun main(args: Array<String>) {
                 out.write(currentFlow.toString());
                 out.write("\n");
             };
+            "show" -> {
+                printAllData();
+            };
              else -> continueAdd = false;
         }
     }

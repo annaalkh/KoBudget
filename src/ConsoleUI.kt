@@ -4,6 +4,7 @@
 
 import java.util.Scanner
 import java.util.Date
+import java.io.File
 
 public fun inputFlow(flowType: String): FinanceFlow {
     var theIn:Scanner=Scanner(System.`in`);
@@ -52,4 +53,12 @@ public fun selectNextOperation(): String {
     if (userInput.equals("3")) return "show";
     if (userInput.equals("4")) return "exit";
     return "exit";
+}
+
+public fun printAllData() {
+    var theIn:Scanner=Scanner(File("outgoings"));
+    while (theIn.hasNext()) {
+        println(theIn.nextLine());
+    }
+    println();
 }
