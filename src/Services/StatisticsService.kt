@@ -3,6 +3,7 @@ package Services
 import DataProviders.AbstractFinanceFlowsProvider
 import DataProviders.FileFinanceFlowsProvider
 import java.util.ArrayList
+import java.util.Date
 
 /**
  * Created by Anna on 22.10.13.
@@ -13,11 +14,55 @@ public fun getTotalBasicStatistics(): CommonStatistics {
 
     var flowList: ArrayList<FinanceFlow> = dataProvider.getAllFlows();
 
+    var currentStatistics: CommonStatistics = getStatisticsFromFlows(flowList);
+
+    return currentStatistics;
+}
+
+public fun getBasicStatisticsForPeriod(periodStartDate: Date, periodEndDate: Date): CommonStatistics {
+    var dataProvider: AbstractFinanceFlowsProvider = FileFinanceFlowsProvider();
+
+    var flowList: ArrayList<FinanceFlow> = dataProvider.getFlowsForPeriod(periodStartDate, periodEndDate);
+
+    var currentStatistics: CommonStatistics = getStatisticsFromFlows(flowList);
+
+    return currentStatistics;
+}
+
+public fun getBasicStatisticsForCurrentYear(): CommonStatistics {
+    var currentYear: Array<Date> = getCurrentYear();
+
+    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentYear.get(0), currentYear.get(1));
+
+    return currentStatistics;
+}
+
+public fun getBasicStatisticsForCurrentMonth(): CommonStatistics {
+    var currentMonth: Array<Date> = getCurrentMonth();
+
+    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentMonth.get(0), currentMonth.get(1));
+
+    return currentStatistics;
+}
+
+public fun getBasicStatisticsForCurrentDay(): CommonStatistics {
+    var currentDay: Array<Date> = getCurrentDay();
+
+    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentDay.get(0), currentDay.get(1));
+
+    return currentStatistics;
+}
+
+fun getStatisticsFromFlows(flowList: ArrayList<FinanceFlow>): CommonStatistics {
     var currentStatistics: CommonStatistics = CommonStatistics();
 
     var countTotal: Int = 0;
     var countIN: Int = 0;
     var countOUT: Int = 0;
+
+    currentStatistics.min = Integer.MAX_VALUE.toDouble();
+    currentStatistics.minIN = Integer.MAX_VALUE.toDouble();
+    currentStatistics.minOUT = Integer.MAX_VALUE.toDouble();
 
     for (financeFlow in flowList) {
         var currentSum = financeFlow.sum;
@@ -44,6 +89,10 @@ public fun getTotalBasicStatistics(): CommonStatistics {
     currentStatistics.mean = currentStatistics.sum / countTotal;
     currentStatistics.meanIN = currentStatistics.sumIN / countIN;
     currentStatistics.meanOUT = currentStatistics.sumOUT / countOUT;
+
+    if (currentStatistics.min >= Integer.MAX_VALUE.toDouble()) currentStatistics.min = 0.0;
+    if (currentStatistics.minIN >= Integer.MAX_VALUE.toDouble()) currentStatistics.minIN = 0.0;
+    if (currentStatistics.minOUT >= Integer.MAX_VALUE.toDouble()) currentStatistics.minOUT = 0.0;
 
     return currentStatistics;
 }

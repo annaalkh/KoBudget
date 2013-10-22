@@ -64,11 +64,11 @@ public class FileFinanceFlowsProvider: AbstractFinanceFlowsProvider {
             var s: Array<String> = currentString.split(" ");
 
             flowType = s.get(0);
-            date = Date();
+            date = stringToDate(s.get(1));
             title = s.get(2);
             sum = s.get(3).toDouble();
 
-            if (date.before(periodEndDate) || date.after(periodEndDate)) continue;
+            if (date.before(periodStartDate) || date.after(periodEndDate)) continue;
 
             if (flowType.equals("OUT")) {
                 currentFlow = Outgoing(title, sum, date);

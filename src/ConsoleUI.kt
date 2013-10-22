@@ -6,6 +6,9 @@ import java.util.Scanner
 import java.util.Date
 import java.io.File
 import Services.getTotalBasicStatistics
+import Services.getBasicStatisticsForCurrentMonth
+import Services.getBasicStatisticsForCurrentDay
+import Services.getBasicStatisticsForCurrentYear
 
 public fun inputFlow(flowType: String): FinanceFlow {
     var theIn:Scanner=Scanner(System.`in`);
@@ -67,7 +70,46 @@ public fun printAllData() {
 }
 
 public fun printCommonStatistics() {
-    var commonStatistics: CommonStatistics = getTotalBasicStatistics();
+    var currentPeriod: String = selectPeriod();
+
+    var commonStatistics: CommonStatistics;
+
+    when (currentPeriod) {
+        "all" -> {
+            commonStatistics = getTotalBasicStatistics();
+        };
+        "day" -> {
+            commonStatistics = getBasicStatisticsForCurrentDay();
+        };
+        "month" -> {
+            commonStatistics = getBasicStatisticsForCurrentMonth();
+        };
+        "year" -> {
+            commonStatistics = getBasicStatisticsForCurrentYear();
+        };
+        else -> return;
+    }
+
     var statisticsString = commonStatistics.toString();
     println(statisticsString);
 }
+
+public fun selectPeriod(): String {
+    var theIn:Scanner=Scanner(System.`in`);
+    printSelectPeriodMenu();
+    var userInput: String = theIn.next();
+    if (userInput.equals("1")) return "all";
+    if (userInput.equals("2")) return "day";
+    if (userInput.equals("3")) return "month";
+    if (userInput.equals("4")) return "year";
+    return "exit";
+}
+
+fun printSelectPeriodMenu() {
+    println("Chose period:");
+    println("1. All the time");
+    println("2. Current day");
+    println("3. Current month");
+    println("4. Current year");
+}
+
