@@ -5,6 +5,7 @@
 import java.util.Date
 
 public open class FinanceFlow(flowType: String = "OUT", title: String = "", sum: Double =0.0, date: Date = Date(), comment: String = "") {
+    val flowType: String = flowType;
     var title: String = title;
     var sum: Double = sum;
     var date: Date = date;

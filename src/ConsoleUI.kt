@@ -5,6 +5,7 @@
 import java.util.Scanner
 import java.util.Date
 import java.io.File
+import Services.getTotalBasicStatistics
 
 public fun inputFlow(flowType: String): FinanceFlow {
     var theIn:Scanner=Scanner(System.`in`);
@@ -41,7 +42,8 @@ public fun printConsoleMenu() {
     println("1. Input outgoing");
     println("2. Input incoming");
     println("3. Show data");
-    println("4. Exit");
+    println("4. Common statistics");
+    println("5. Exit");
 }
 
 public fun selectNextOperation(): String {
@@ -51,7 +53,8 @@ public fun selectNextOperation(): String {
     if (userInput.equals("1")) return "addOUT";
     if (userInput.equals("2")) return "addIN";
     if (userInput.equals("3")) return "show";
-    if (userInput.equals("4")) return "exit";
+    if (userInput.equals("4")) return "commonStatistics";
+    if (userInput.equals("5")) return "exit";
     return "exit";
 }
 
@@ -61,4 +64,10 @@ public fun printAllData() {
         println(theIn.nextLine());
     }
     println();
+}
+
+public fun printCommonStatistics() {
+    var commonStatistics: CommonStatistics = getTotalBasicStatistics();
+    var statisticsString = commonStatistics.toString();
+    println(statisticsString);
 }

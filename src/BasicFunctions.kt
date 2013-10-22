@@ -35,6 +35,9 @@ fun main(args: Array<String>) {
             "show" -> {
                 printAllData();
             };
+            "commonStatistics" -> {
+                printCommonStatistics();
+            };
              else -> continueAdd = false;
         }
     }

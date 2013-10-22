@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8b7a7e6-0ecf-4262-9ab7-7c72928cbd4b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataProviders/AbsatractFinanceFlowsProvider.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CommonStatistics.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataProviders/FileFinanceFlowsProvider.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Services/StatisticsService.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BasicFunctions.kt" afterPath="$PROJECT_DIR$/src/BasicFunctions.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ConsoleUI.kt" afterPath="$PROJECT_DIR$/src/ConsoleUI.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FinanceFlow.kt" afterPath="$PROJECT_DIR$/src/FinanceFlow.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Incoming.kt" afterPath="$PROJECT_DIR$/src/Incoming.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Outgoing.kt" afterPath="$PROJECT_DIR$/src/Outgoing.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KoBug.iws" />
@@ -60,7 +67,7 @@
       </breakpoint>
     </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/BasicFunctions.kt" line="21" class="Class at BasicFunctions.kt:21" package="">
+      <breakpoint url="file://$PROJECT_DIR$/src/BasicFunctions.kt" line="0" class="_DefaultPackage$src$BasicFunctions$d315e23e" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -75,7 +82,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/BasicFunctions.kt" line="0" class="Class at BasicFunctions.kt:0" package="">
+      <breakpoint url="file://$PROJECT_DIR$/src/Services/StatisticsService.kt" line="13" class="Services.ServicesPackage$src$StatisticsService$1a8105f7" package="Services">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -100,31 +107,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="KoBug.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/KoBug.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="323">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestMain.kt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TestMain.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="13" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="272">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BasicFunctions.kt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BasicFunctions.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="31" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="833">
+            <state line="33" column="14" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="782">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonStatistics.kt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CommonStatistics.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="96" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="578">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticsService.kt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Services/StatisticsService.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.33260393" vertical-offset="307" max-vertical-offset="918">
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#41#65#0" expanded="true" />
+                <element signature="e#18#67#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,28 +145,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsoleUI.kt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ConsoleUI.kt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ConsoleUI.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="14" selection-start="1474" selection-end="1474" vertical-scroll-proportion="0.751046" vertical-offset="627" max-vertical-offset="1105">
+            <state line="71" column="30" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.0" vertical-offset="449" max-vertical-offset="1241">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Incoming.kt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Incoming.kt">
+      <file leaf-file-name="AbsatractFinanceFlowsProvider.kt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataProviders/AbsatractFinanceFlowsProvider.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="5" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Outgoing.kt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Outgoing.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="1" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="306">
+            <state line="12" column="1" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
@@ -169,7 +166,36 @@
       <file leaf-file-name="FinanceFlow.kt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FinanceFlow.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="425">
+            <state line="8" column="30" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileFinanceFlowsProvider.kt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataProviders/FileFinanceFlowsProvider.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="39" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="1496">
+              <folding>
+                <element signature="e#23#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Outgoing.kt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Outgoing.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="26" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Incoming.kt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Incoming.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="22" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
@@ -194,13 +220,17 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/TestMain.kt" />
+        <option value="$PROJECT_DIR$/src/DateUtils.kt" />
+        <option value="$PROJECT_DIR$/src/DataProviders/AbsatractFinanceFlowsProvider.kt" />
+        <option value="$PROJECT_DIR$/KoBug.iml" />
         <option value="$PROJECT_DIR$/src/FinanceFlow.kt" />
         <option value="$PROJECT_DIR$/src/Outgoing.kt" />
         <option value="$PROJECT_DIR$/src/Incoming.kt" />
-        <option value="$PROJECT_DIR$/src/DateUtils.kt" />
-        <option value="$PROJECT_DIR$/KoBug.iml" />
         <option value="$PROJECT_DIR$/src/BasicFunctions.kt" />
         <option value="$PROJECT_DIR$/src/ConsoleUI.kt" />
+        <option value="$PROJECT_DIR$/src/DataProviders/FileFinanceFlowsProvider.kt" />
+        <option value="$PROJECT_DIR$/src/Services/StatisticsService.kt" />
+        <option value="$PROJECT_DIR$/src/CommonStatistics.kt" />
       </list>
     </option>
   </component>
@@ -237,7 +267,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,8 +299,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KoBug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KoBug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KoBug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KoBug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataProviders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,6 +420,19 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -379,19 +458,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -494,12 +560,16 @@
       <created>1382284382780</created>
       <updated>1382284382780</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Issue#4 Create opportunity to see data">
+      <created>1382380482708</created>
+      <updated>1382380482708</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -518,7 +588,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21625" sideWeight="0.67741936" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -536,7 +606,8 @@
     <MESSAGE value="Create test file" />
     <MESSAGE value="Issue#1 Add opportunity to input outgoings" />
     <MESSAGE value="Issue#2 Create console menu&#10;Issue#3 Add opportunity to input incomings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Issue#2 Create console menu&#10;Issue#3 Add opportunity to input incomings" />
+    <MESSAGE value="Issue#4 Create opportunity to see data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Issue#4 Create opportunity to see data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -546,41 +617,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DateUtils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConsoleUI.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Incoming.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Outgoing.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="1" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FinanceFlow.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KoBug.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="323">
@@ -607,20 +643,6 @@
         <state line="81" column="0" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.0" vertical-offset="965" max-vertical-offset="2448" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FinanceFlow.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Outgoing.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="1" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DateUtils.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="1" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
@@ -635,27 +657,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BasicFunctions.kt">
+    <entry file="jar://$APPLICATION_PLUGINS_DIR$/Kotlin/lib/kotlin-plugin.jar!/jet/Arrays.jet">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="31" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="833">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#65#0" expanded="true" />
-          </folding>
+        <state line="4" column="55" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataProviders/AbsatractFinanceFlowsProvider.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="1" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Incoming.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+        <state line="6" column="22" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Outgoing.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="26" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinanceFlow.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="30" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataProviders/FileFinanceFlowsProvider.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="39" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="1496">
+          <folding>
+            <element signature="e#23#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ConsoleUI.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="14" selection-start="1474" selection-end="1474" vertical-scroll-proportion="0.751046" vertical-offset="627" max-vertical-offset="1105">
+        <state line="71" column="30" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="1241">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BasicFunctions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="14" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CommonStatistics.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="96" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/StatisticsService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.33260393" vertical-offset="307" max-vertical-offset="918">
+          <folding>
+            <element signature="e#18#67#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
