@@ -4,6 +4,7 @@
 
 import java.util.Calendar
 import java.util.Date
+import java.util.concurrent.TimeUnit
 
 public fun dateToString(theDate: Date): String {
     var theCalendar: Calendar = Calendar.getInstance();
@@ -25,8 +26,7 @@ public fun stringToDate(dateString: String): Date {
     return theCalendar.getTime();
 }
 
-public fun getCurrentYear(): Array<Date> {
-    var result: Array<Date> = Array(2, {i -> Date()});
+public fun getCurrentYear(): DatePeriod {
     var theCalendar: Calendar = Calendar.getInstance();
     theCalendar.set(Calendar.HOUR, 0);
     theCalendar.set(Calendar.MINUTE, 0);
@@ -43,15 +43,12 @@ public fun getCurrentYear(): Array<Date> {
     theCalendar.set(Calendar.SECOND, 59);
     var dateEnd: Date = theCalendar.getTime();
 
-    result.set(0, dateStart);
-    result.set(1, dateEnd);
-
+    var result = DatePeriod(dateStart, dateEnd);
     return result;
 }
 
 
-public fun getCurrentMonth(): Array<Date> {
-    var result: Array<Date> = Array(2, {i -> Date()});
+public fun getCurrentMonth(): DatePeriod {
     var theCalendar: Calendar = Calendar.getInstance();
     theCalendar.set(Calendar.HOUR, 0);
     theCalendar.set(Calendar.MINUTE, 0);
@@ -67,14 +64,12 @@ public fun getCurrentMonth(): Array<Date> {
     theCalendar.set(Calendar.SECOND, 59);
     var dateEnd: Date = theCalendar.getTime();
 
-    result.set(0, dateStart);
-    result.set(1, dateEnd);
+    var result = DatePeriod(dateStart, dateEnd);
 
     return result;
 }
 
-public fun getCurrentDay(): Array<Date> {
-    var result: Array<Date> = Array(2, {i -> Date()});
+public fun getCurrentDay(): DatePeriod {
     var theCalendar: Calendar = Calendar.getInstance();
     theCalendar.set(Calendar.HOUR, 0);
     theCalendar.set(Calendar.MINUTE, 0);
@@ -88,10 +83,17 @@ public fun getCurrentDay(): Array<Date> {
 
     var dateEnd: Date = theCalendar.getTime();
 
-    result.set(0, dateStart);
-    result.set(1, dateEnd);
+    var result = DatePeriod(dateStart, dateEnd);
 
     return result;
+}
+
+public fun getDiffInDays(dateStart: Date, dateEnd: Date): Long {
+    var timeStart = dateStart.getTime();
+    var timeEnd = dateEnd.getTime();
+    var diffInTime = timeEnd - timeStart;
+    var diffInDays = TimeUnit.MILLISECONDS.toDays(diffInTime);
+    return diffInDays+1;
 }
 
 fun getQuarterMonths(theCalendar: Calendar): Array<Int> {

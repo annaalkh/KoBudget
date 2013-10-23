@@ -30,25 +30,25 @@ public fun getBasicStatisticsForPeriod(periodStartDate: Date, periodEndDate: Dat
 }
 
 public fun getBasicStatisticsForCurrentYear(): CommonStatistics {
-    var currentYear: Array<Date> = getCurrentYear();
+    var currentYear: DatePeriod = getCurrentYear();
 
-    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentYear.get(0), currentYear.get(1));
+    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentYear.dateStart, currentYear.dateEnd);
 
     return currentStatistics;
 }
 
 public fun getBasicStatisticsForCurrentMonth(): CommonStatistics {
-    var currentMonth: Array<Date> = getCurrentMonth();
+    var currentMonth: DatePeriod = getCurrentMonth();
 
-    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentMonth.get(0), currentMonth.get(1));
+    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentMonth.dateStart, currentMonth.dateEnd);
 
     return currentStatistics;
 }
 
 public fun getBasicStatisticsForCurrentDay(): CommonStatistics {
-    var currentDay: Array<Date> = getCurrentDay();
+    var currentDay: DatePeriod = getCurrentDay();
 
-    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentDay.get(0), currentDay.get(1));
+    var currentStatistics: CommonStatistics = getBasicStatisticsForPeriod(currentDay.dateStart, currentDay.dateEnd);
 
     return currentStatistics;
 }
