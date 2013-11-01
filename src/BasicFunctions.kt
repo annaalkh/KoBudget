@@ -7,11 +7,13 @@ import java.io.File
 import java.io.FileWriter
 import java.util.Date
 import java.util.Calendar
+import DataWriters.AbstractFinanceFlowsWriter
+import DataWriters.FileFinanceFlowWriter
 
 fun main(args: Array<String>) {
     var continueAdd:Boolean = true;
 
-    var out:FileWriter = FileWriter("outgoings", true);
+    var dataWriter: AbstractFinanceFlowsWriter = FileFinanceFlowWriter();
 
     var currentFlow: FinanceFlow;
 
@@ -24,13 +26,11 @@ fun main(args: Array<String>) {
         when (userAction) {
             "addOUT" -> {
                 currentFlow = inputFlow("OUT")
-                out.write(currentFlow.toString());
-                out.write("\n");
+                dataWriter.writeFlow(currentFlow);
             };
             "addIN" -> {
                 currentFlow = inputFlow("IN")
-                out.write(currentFlow.toString());
-                out.write("\n");
+                dataWriter.writeFlow(currentFlow);
             };
             "show" -> {
                 printAllData();
@@ -44,6 +44,5 @@ fun main(args: Array<String>) {
              else -> continueAdd = false;
         }
     }
-    out.close();
 }
 

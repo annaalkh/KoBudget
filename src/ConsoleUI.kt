@@ -10,6 +10,9 @@ import Services.getBasicStatisticsForCurrentMonth
 import Services.getBasicStatisticsForCurrentDay
 import Services.getBasicStatisticsForCurrentYear
 import Services.getTotalAdvancedStatistics
+import DataProviders.AbstractFinanceFlowsProvider
+import DataWriters.FileFinanceFlowWriter
+import DataProviders.FileFinanceFlowsProvider
 
 public fun inputFlow(flowType: String): FinanceFlow {
     var theIn:Scanner=Scanner(System.`in`);
@@ -28,7 +31,7 @@ public fun inputFlow(flowType: String): FinanceFlow {
 
     currentDate = Date();
     println(currentFlow.inputTitleMessage);
-    title = theIn.next();
+    title = theIn.nextLine();
     println("Input sum");
     sum = theIn.nextDouble();
 
@@ -65,9 +68,10 @@ public fun selectNextOperation(): String {
 }
 
 public fun printAllData() {
-    var theIn:Scanner=Scanner(File("outgoings"));
-    while (theIn.hasNext()) {
-        println(theIn.nextLine());
+    var financeFlowProvider: AbstractFinanceFlowsProvider = FileFinanceFlowsProvider();
+    var flowList: List<FinanceFlow> = financeFlowProvider.getAllFlows();
+    for (financeFlow in flowList) {
+        println(financeFlow.toString());
     }
     println();
 }
@@ -122,7 +126,7 @@ public fun selectPeriod(): String {
 public fun selectTitle(): String {
     var theIn:Scanner=Scanner(System.`in`);
     printInputTitleMenu();
-    var userInput: String = theIn.next();
+    var userInput: String = theIn.nextLine();
     return userInput;
 }
 

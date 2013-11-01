@@ -30,8 +30,8 @@ public class FileFinanceFlowsProvider: AbstractFinanceFlowsProvider {
             var s: Array<String> = currentString.split(" ");
 
             flowType = s.get(0);
-            date = Date();
-            title = s.get(2);
+            date = stringToDate(s.get(1));
+            title = s.get(2).replace('_', ' ');
             sum = s.get(3).toDouble();
 
             if (flowType.equals("OUT")) {
@@ -65,7 +65,7 @@ public class FileFinanceFlowsProvider: AbstractFinanceFlowsProvider {
 
             flowType = s.get(0);
             date = stringToDate(s.get(1));
-            title = s.get(2);
+            title = s.get(2).replace('_', ' ');
             sum = s.get(3).toDouble();
 
             if (date.before(periodStartDate) || date.after(periodEndDate)) continue;
@@ -99,8 +99,8 @@ public class FileFinanceFlowsProvider: AbstractFinanceFlowsProvider {
             var s: Array<String> = currentString.split(" ");
 
             flowType = s.get(0);
-            date = Date();
-            currentTitle = s.get(2);
+            date = stringToDate(s.get(1));
+            currentTitle = s.get(2).replace('_', ' ');
             sum = s.get(3).toDouble();
 
             if (currentTitle!=title) continue;
@@ -135,7 +135,7 @@ public class FileFinanceFlowsProvider: AbstractFinanceFlowsProvider {
 
             flowType = s.get(0);
             date = stringToDate(s.get(1));
-            currentTitle = s.get(2);
+            currentTitle = s.get(2).replace('_', ' ');
             sum = s.get(3).toDouble();
 
             if (date.before(periodStartDate) || date.after(periodEndDate)) continue;

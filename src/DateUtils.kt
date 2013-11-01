@@ -9,8 +9,7 @@ import java.util.concurrent.TimeUnit
 public fun dateToString(theDate: Date): String {
     var theCalendar: Calendar = Calendar.getInstance();
     theCalendar.setTime(theDate);
-    theCalendar.get(Calendar.DATE);
-    var result:String = "${theCalendar.get(Calendar.DATE)}.${theCalendar.get(Calendar.MONTH)}.${theCalendar.get(Calendar.YEAR)}"
+    var result:String = "${theCalendar.get(Calendar.DATE)}.${theCalendar.get(Calendar.MONTH)+1}.${theCalendar.get(Calendar.YEAR)}"
     return result;
 }
 
@@ -18,7 +17,7 @@ public fun stringToDate(dateString: String): Date {
     var theCalendar: Calendar = Calendar.getInstance();
     var dateArray: Array<String> = dateString.split('.');
     var date: Int = dateArray.get(0).toInt();
-    var month: Int = dateArray.get(1).toInt();
+    var month: Int = dateArray.get(1).toInt()-1;
     var year: Int = dateArray.get(2).toInt();
 
     theCalendar.set(year, month, date, 0, 0, 0);
