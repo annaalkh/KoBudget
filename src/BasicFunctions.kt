@@ -38,6 +38,9 @@ fun main(args: Array<String>) {
             "commonStatistics" -> {
                 printCommonStatistics();
             };
+            "advancedStatistics" -> {
+                printAdvancedStatistics();
+            };
              else -> continueAdd = false;
         }
     }

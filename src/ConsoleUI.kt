@@ -9,6 +9,7 @@ import Services.getTotalBasicStatistics
 import Services.getBasicStatisticsForCurrentMonth
 import Services.getBasicStatisticsForCurrentDay
 import Services.getBasicStatisticsForCurrentYear
+import Services.getTotalAdvancedStatistics
 
 public fun inputFlow(flowType: String): FinanceFlow {
     var theIn:Scanner=Scanner(System.`in`);
@@ -46,7 +47,8 @@ public fun printConsoleMenu() {
     println("2. Input incoming");
     println("3. Show data");
     println("4. Common statistics");
-    println("5. Exit");
+    println("5. Advanded statistics");
+    println("6. Exit");
 }
 
 public fun selectNextOperation(): String {
@@ -57,7 +59,8 @@ public fun selectNextOperation(): String {
     if (userInput.equals("2")) return "addIN";
     if (userInput.equals("3")) return "show";
     if (userInput.equals("4")) return "commonStatistics";
-    if (userInput.equals("5")) return "exit";
+    if (userInput.equals("5")) return "advancedStatistics";
+    if (userInput.equals("6")) return "exit";
     return "exit";
 }
 
@@ -94,6 +97,17 @@ public fun printCommonStatistics() {
     println(statisticsString);
 }
 
+public fun printAdvancedStatistics() {
+    var currentTitle: String = selectTitle();
+    var advancedStatistics: CommonStatistics;
+
+    advancedStatistics = getTotalAdvancedStatistics(currentTitle);
+
+    var statisticsString = advancedStatistics.toString();
+    println(statisticsString);
+
+}
+
 public fun selectPeriod(): String {
     var theIn:Scanner=Scanner(System.`in`);
     printSelectPeriodMenu();
@@ -105,11 +119,22 @@ public fun selectPeriod(): String {
     return "exit";
 }
 
+public fun selectTitle(): String {
+    var theIn:Scanner=Scanner(System.`in`);
+    printInputTitleMenu();
+    var userInput: String = theIn.next();
+    return userInput;
+}
+
 fun printSelectPeriodMenu() {
     println("Chose period:");
     println("1. All the time");
     println("2. Current day");
     println("3. Current month");
     println("4. Current year");
+}
+
+fun printInputTitleMenu() {
+    println("Input title:");
 }
 

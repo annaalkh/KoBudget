@@ -53,6 +53,16 @@ public fun getBasicStatisticsForCurrentDay(): CommonStatistics {
     return currentStatistics;
 }
 
+public fun getTotalAdvancedStatistics(title: String): CommonStatistics {
+    var dataProvider: AbstractFinanceFlowsProvider = FileFinanceFlowsProvider();
+
+    var flowList: ArrayList<FinanceFlow> = dataProvider.getAllFlowsByTitle(title);
+
+    var currentStatistics: CommonStatistics = getStatisticsFromFlows(flowList);
+
+    return currentStatistics;
+}
+
 fun getStatisticsFromFlows(flowList: ArrayList<FinanceFlow>): CommonStatistics {
     var currentStatistics: CommonStatistics = CommonStatistics();
 

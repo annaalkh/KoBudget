@@ -28,17 +28,17 @@ public fun stringToDate(dateString: String): Date {
 
 public fun getCurrentYear(): DatePeriod {
     var theCalendar: Calendar = Calendar.getInstance();
-    theCalendar.set(Calendar.HOUR, 0);
+    theCalendar.set(Calendar.HOUR_OF_DAY, 0);
     theCalendar.set(Calendar.MINUTE, 0);
     theCalendar.set(Calendar.SECOND, 0);
 
     theCalendar.set(Calendar.DATE, 1);
-    theCalendar.set(Calendar.MONTH, 1);
+    theCalendar.set(Calendar.MONTH, Calendar.JANUARY);
     var dateStart: Date = theCalendar.getTime();
 
     theCalendar.set(Calendar.MONTH, Calendar.DECEMBER);
     theCalendar.set(Calendar.DATE, 31);
-    theCalendar.set(Calendar.HOUR, 23);
+    theCalendar.set(Calendar.HOUR_OF_DAY, 23);
     theCalendar.set(Calendar.MINUTE, 59);
     theCalendar.set(Calendar.SECOND, 59);
     var dateEnd: Date = theCalendar.getTime();
@@ -50,7 +50,7 @@ public fun getCurrentYear(): DatePeriod {
 
 public fun getCurrentMonth(): DatePeriod {
     var theCalendar: Calendar = Calendar.getInstance();
-    theCalendar.set(Calendar.HOUR, 0);
+    theCalendar.set(Calendar.HOUR_OF_DAY, 0);
     theCalendar.set(Calendar.MINUTE, 0);
     theCalendar.set(Calendar.SECOND, 0);
 
@@ -59,7 +59,7 @@ public fun getCurrentMonth(): DatePeriod {
 
     var maxDay: Int = theCalendar.getActualMaximum(Calendar.DATE);
     theCalendar.set(Calendar.DATE, maxDay);
-    theCalendar.set(Calendar.HOUR, 23);
+    theCalendar.set(Calendar.HOUR_OF_DAY, 23);
     theCalendar.set(Calendar.MINUTE, 59);
     theCalendar.set(Calendar.SECOND, 59);
     var dateEnd: Date = theCalendar.getTime();
@@ -71,13 +71,13 @@ public fun getCurrentMonth(): DatePeriod {
 
 public fun getCurrentDay(): DatePeriod {
     var theCalendar: Calendar = Calendar.getInstance();
-    theCalendar.set(Calendar.HOUR, 0);
+    theCalendar.set(Calendar.HOUR_OF_DAY, 0);
     theCalendar.set(Calendar.MINUTE, 0);
     theCalendar.set(Calendar.SECOND, 0);
 
     var dateStart: Date = theCalendar.getTime();
 
-    theCalendar.set(Calendar.HOUR, 23);
+    theCalendar.set(Calendar.HOUR_OF_DAY, 23);
     theCalendar.set(Calendar.MINUTE, 59);
     theCalendar.set(Calendar.SECOND, 59);
 
